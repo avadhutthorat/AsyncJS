@@ -13,4 +13,12 @@ const getPosts = () => {
   }, 1000);
 };
 
+const createPost = (post, callback) => {
+  setTimeout(() => {
+    posts.push(post);
+    callback();
+  }, 2000);
+};
+
 getPosts();
+createPost({ title: "post three", content: "This is post three" }, getPosts);
